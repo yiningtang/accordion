@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Accordion } from './accordion/components/Accordion.component';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { mockAccordionItems } from './accordion/mock/AccordionItems.mock';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Accordion items={mockAccordionItems}></Accordion>
   </React.StrictMode>,
   document.getElementById('root')
 );
