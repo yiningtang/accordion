@@ -1,4 +1,4 @@
 export interface AccordionItem {
-    accordionHeader: string,
-    accordionContent: string[]
+    accordionTitle: string,
+    accordionContent: JSX.Element
 }

@@ -1,10 +1,13 @@
-import React from 'react';
-import { AccordionItem as AccordionItemType } from '../models/AccordionItems.interface';
-import { AccordionItem } from './AccordionItem.component';
+import React from "react";
+import { AccordionItem } from "./AccordionItem.component";
 
+export const Accordion = ({ children }: { children: JSX.Element[] }) => {
+    const items = children.filter(item => item.type.name === 'AccordionItem');
 
-export const Accordion = ({items}: {items:AccordionItemType[]}) => {
-    return(
-        <>{items.map((item:AccordionItemType, index: number) => <AccordionItem item={item} initialOpenStatus={index === 0}></AccordionItem>)}</>
-    )
+    return (<>
+        {items.map(item => {
+            return <AccordionItem children={item.props.children} initialStatus={item.props.initialStatus} title={item.props.title}></AccordionItem>
+        }
+        )}
+    </>)
 }
