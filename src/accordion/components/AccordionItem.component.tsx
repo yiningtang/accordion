@@ -1,20 +1,18 @@
 import { useState } from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
+import { Grey } from '../../variables/colors/colors.constants';
 import { AccordionItemTitle } from './AccordionItemTitle.component';
+import { AccordionItem } from '../models/AccordionItems.interface';
 
-const fadeIn = keyframes`
-    from { height: 0; }
-      to { height: 100%; }`;
-const fadeOut = keyframes`
-    from { height: 0; }
-    to { height: 100%; }`;
 const AccordionItemContentTemplate = styled.div
-    `animation: ${(props: { isOpen: boolean }) => props.isOpen ? fadeIn : fadeOut} 0.7s;
-`
-
-
-
-export const AccordionItem = ({ children, initialStatus = false, title = "" }: { children: JSX.Element[] | JSX.Element, initialStatus?: boolean, title: string }) => {
+    `max-height: ${(props: { isOpen: boolean }) => props.isOpen ? '100vh' : 0}};
+     opacity: ${(props: { isOpen: boolean }) => props.isOpen ? 1 : 0};
+     transition: all 0.5s;
+     border: 1px solid ${Grey};
+     `
+const AccordionItem = ({ children, initialStatus = false, title = "" }: { children: JSX.Element[] | JSX.Element, initialStatus?: boolean, title: string }) => {
     const [isOpen, toggleOpenStatus] = useState<boolean>(initialStatus);
-    return (<><AccordionItemTitle onClick={() => toggleOpenStatus(!isOpen)}>{title}</AccordionItemTitle>{isOpen ? <AccordionItemContentTemplate isOpen={isOpen}>{children}</AccordionItemContentTemplate> : null}</>)
+    return (<><AccordionItemTitle isOpen={isOpen} onClick={() => toggleOpenStatus(!isOpen)}>{title}</AccordionItemTitle>{<AccordionItemContentTemplate isOpen={isOpen}>{isOpen ? children : null}</AccordionItemContentTemplate>}</>)
 }
+
+export default AccordionItem;

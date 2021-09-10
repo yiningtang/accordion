@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { AccordionItem } from './accordion/components/AccordionItem.component';
+import AccordionItem from './accordion/components/AccordionItem.component';
 import { Accordion } from './accordion/components/Accordion.component';
 import { mockAccordionItems } from './accordion/mock/AccordionItems.mock';
 
