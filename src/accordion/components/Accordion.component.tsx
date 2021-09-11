@@ -1,6 +1,6 @@
 import React from "react";
 import { AccordionItems } from "../models/AccordionItems.enum";
-import AccordionItem from "./AccordionItem.component";
+import AccordionItem from "./AccordionItem";
 
 
 export const Accordion = ({ children }: { children: JSX.Element[] }) => {
