@@ -9,7 +9,7 @@ function App(): ReactElement {
     <div className='accordion-container'>
       <Accordion>
         {mockAccordionItems.map((item, index) => (
-          <AccordionItem index={index.toString()} initialStatus={index === 0} title={item.accordionTitle}>
+          <AccordionItem key={index} index={index.toString()} initialStatus={index === 0} title={item.accordionTitle}>
             {item.accordionContent}
           </AccordionItem>
         ))}
