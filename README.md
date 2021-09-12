@@ -1,3 +1,17 @@
+## Assumptions:
+* Accordion demo aims to develop a UI component that can be consumed by other projects/users.  
+* Accordion panel provides the flexibility for consumers to pass the arbitrary HTML template.
+* Two ways to consume this accordion component:
+    * Insert the object array of accordionTitle & accordionContent arbitrary HTML template between <Accordion> element
+    * Insert<AccordionItem>{arbitary accordion content HTML template}</AccordionItem> between <Accordion>
+* Accordion title is passed from the consumer side as a title string variable 
+
+
+## Potential improvments:
+* Add chervon icon on each accordion header
+* Provide the option to configure allowMultipleAccordionOpen
+* Provide the otpion to choose the initial open accordion
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
