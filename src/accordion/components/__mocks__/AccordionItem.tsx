@@ -1,2 +1,4 @@
-const AccordionItem = () => <div>Hello World</div>
-export default AccordionItem
+import { ReactElement } from 'react';
+
+const AccordionItem = (): ReactElement => <div>Hello World</div>;
+export default AccordionItem;
